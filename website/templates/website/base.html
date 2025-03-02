@@ -1,16 +1,15 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 
-<!-- Mirrored from wpriverthemes.com/HTML/drake/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 14 Feb 2025 11:31:16 GMT -->
+<!-- Mirrored from wpriverthemes.com/HTML/drake/home1.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 14 Feb 2025 11:31:42 GMT -->
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Drake - OnePage Portfolio HTML5 Template</title>
-
-    <link rel="icon" type="image/x-icon" href="assets/images/favicon.png">
-
-
+    <link rel="icon" type="image/x-icon" href="{% static 'website/images/favicon.png' %}">
 
     <!-- Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com/">
@@ -18,20 +17,23 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet">
 
     <!-- Stylesheet -->
-    <link rel="stylesheet" href="../../../maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
-    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
-    <link rel="stylesheet" href="assets/css/owl.theme.default.min.css">
-    <link rel="stylesheet" href="assets/css/animate.min.css">
-    <link rel="stylesheet" href="assets/css/smooth-scrollbar.css">
-    <link rel="stylesheet" href="assets/css/lightbox.min.css">
+    <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
+    <link href="{% static 'website/css/bootstrap.min.css' %}" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'website/css/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static 'website/css/owl.theme.default.min.css' %}">
+    <link rel="stylesheet" href="{% static 'website/css/animate.min.css' %}">
+    <link rel="stylesheet" href="{% static 'website/css/smooth-scrollbar.css' %}">
+    <link rel="stylesheet" href="{% static 'website/css/lightbox.min.css' %}">
 
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="assets/css/responsive.css">
+    <link rel="stylesheet" href="{% static 'website/css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'website/css/responsive.css' %}">
 
 </head>
-<body>
+<body class="home1-page">
 
+{% block content %}
+
+{% endblock content%}}
 
     <div class="page-loader">
         <div class="bounceball"></div>
@@ -68,12 +70,12 @@
 
                     <p>THREE DIMENSIONAL SHAPES</p>
                     <ul class="themes">
-                        <li><a href="home1.html">Earth Lines Sphere</a></li>
-                        <li><a href="home2.html">3D Abstract Ball</a></li>
-                        <li><a href="home3.html">Water Waves</a></li>
-                        <li><a href="home4.html">Liquids Wavy</a></li>
-                        <li><a href="home6.html">Solid Color</a></li>
-                        <li><a href="home5.html">Simple Strings</a></li>
+                        <li class="active"><a href="{% url 'home1' %}">Earth Lines Sphere</a></li>
+                        <li><a href="{% url 'home2' %}">3D Abstract Ball</a></li>
+                        <li><a href="{% url 'home3' %}">Water Waves</a></li>
+                        <li><a href="{% url 'home4' %}">Liquids Wavy</a></li>
+                        <li><a href="{% url 'home6' %}">Solid Color</a></li>
+                        <li><a href="{% url 'home5' %}">Simple Strings</a></li>
                     </ul>
                 </div>
             </div>
@@ -129,7 +131,6 @@
                 </ul>
             </div>
 
-
             <div class="sidebar-social">
                 <p>Social</p>
                 <ul class="social-links d-flex align-items-center">
@@ -164,7 +165,7 @@
             </a>
         </li>
         <li>
-            <a class="scroll-to" href="#services">
+            <a href="#services">
                 <span>Services</span> <i class="las la-stream"></i>
             </a>
         </li>
@@ -192,10 +193,10 @@
 
     <div class="left-sidebar">
         <div class="sidebar-header d-flex align-items-center justify-content-between">
-            <img src="assets/images/logo.png" alt="Logo">
+            <img src="{% static 'website/images/logo.png' %}" alt="Logo">
             <span class="designation">Framer Designer & Developer</span>
         </div>
-        <img class="me" src="assets/images/me.jpg" alt="Me">
+        <img class="me" src="{% static 'website/images/me.jpg' %}" alt="Me">
         <h2 class="email">hello@drake.design</h2>
         <h2 class="address">Base in Los Angeles, CA</h2>
         <p class="copyright">&copy; 2022 Drake. All Rights Reserved</p>
@@ -224,10 +225,10 @@
 
                 <div class="left-sidebar">
                     <div class="sidebar-header d-flex align-items-center justify-content-between">
-                        <img src="assets/images/logo.png" alt="Logo">
+                        <img src="{% static 'website/images/logo.png' %}" alt="Logo">
                         <span class="designation">Framer Designer & Developer</span>
                     </div>
-                    <img class="me" src="assets/images/me.jpg" alt="Me">
+                    <img class="me" src="{% static 'website/images/me.jpg' %}" alt="Me">
                     <h2 class="email">hello@drake.design</h2>
                     <h2 class="address">Base in Los Angeles, CA</h2>
                     <p class="copyright">&copy; 2022 Drake. All Rights Reserved</p>
@@ -264,13 +265,13 @@
                             <a href="#portfolio" 
                                 class="go-to-project-btn scroll-to scroll-animation" 
                                 data-animation="rotate_up">
-                                <img src="assets/images/round-text.png" alt="Rounded Text">
+                                <img src="{% static 'website/images/round-text.png' %}" alt="Rounded text">
                                 <i class="las la-arrow-down"></i>
                             </a>
         
                             <div class="facts d-flex">
                                 <div class="left scroll-animation" data-animation="fade_from_left">
-                                    <h1>10+</h1>
+                                    <h1>10+</</h1>
                                     <p>Years of <br>Experience</p>
                                 </div>
                                 <div class="right scroll-animation" data-animation="fade_from_right">
@@ -391,7 +392,7 @@
                                 <div class="col-md-3 scroll-animation" data-animation="fade_from_left">
                                     <div class="skill">
                                         <div class="skill-inner">
-                                            <img src="assets/images/figma.png" alt="Figma">
+                                            <img src="{% static 'website/images/figma.png' %}" alt="Figma">
                                             <h1 class="percent">92%</h1>
                                         </div>
                                         <p class="name">Figma</p>
@@ -400,7 +401,7 @@
                                 <div class="col-md-3 scroll-animation" data-animation="fade_from_bottom">
                                     <div class="skill">
                                         <div class="skill-inner">
-                                            <img src="assets/images/framer.png" alt="Framer">
+                                            <img src="{% static 'website/images/framer.png' %}" alt="Framer">
                                             <h1 class="percent">85%</h1>
                                         </div>
                                         <p class="name">Framer</p>
@@ -409,7 +410,7 @@
                                 <div class="col-md-3 scroll-animation" data-animation="fade_from_top">
                                     <div class="skill">
                                         <div class="skill-inner">
-                                            <img src="assets/images/webflow.png" alt="Webflow">
+                                            <img src="{% static 'website/images/webflow.png' %}" alt="Webflow">
                                             <h1 class="percent">80%</h1>
                                         </div>
                                         <p class="name">Webflow</p>
@@ -418,7 +419,7 @@
                                 <div class="col-md-3 scroll-animation" data-animation="fade_from_right">
                                     <div class="skill">
                                         <div class="skill-inner">
-                                            <img src="assets/images/react.png" alt="React">
+                                            <img src="{% static 'website/images/react.png' %}" alt="React">
                                             <h1 class="percent">90%</h1>
                                         </div>
                                         <p class="name">React</p>
@@ -427,7 +428,7 @@
                                 <div class="col-md-3 scroll-animation" data-animation="fade_from_left">
                                     <div class="skill">
                                         <div class="skill-inner">
-                                            <img src="assets/images/wordpress.png" alt="WordPress">
+                                            <img src="{% static 'website/images/wordpress.png' %}" alt="WordPress">
                                             <h1 class="percent">86%</h1>
                                         </div>
                                         <p class="name">WordPress</p>
@@ -436,7 +437,7 @@
                                 <div class="col-md-3 scroll-animation" data-animation="fade_from_bottom">
                                     <div class="skill">
                                         <div class="skill-inner">
-                                            <img src="assets/images/laravel.png" alt="Laravel/PHP">
+                                            <img src="{% static 'website/images/laravel.png' %}" alt="Laravel/PHP">
                                             <h1 class="percent">70%</h1>
                                         </div>
                                         <p class="name">Laravel/PHP</p>
@@ -463,8 +464,8 @@
                                 <div class="col-md-12 scroll-animation" data-animation="fade_from_bottom">
                                     <div class="portfolio-item portfolio-full">
                                         <div class="portfolio-item-inner">
-                                            <a href="assets/images/portfolio1.jpg" data-lightbox="example-1">
-                                                <img src="assets/images/portfolio1.jpg" alt="Portfolio">
+                                            <a href="{% static 'website/images/portfolio1.jpg' %}" data-lightbox="example-1">
+                                                <img src="{% static 'website/images/portfolio1.jpg' %}" alt="Portfolio">
                                             </a>
         
                                             <ul class="portfolio-categories">
@@ -486,11 +487,11 @@
                                 <div class="col-md-6 scroll-animation" data-animation="fade_from_left">
                                     <div class="portfolio-item portfolio-half">
                                         <div class="portfolio-item-inner">
-                                            <a href="assets/images/portfolio2.jpg" data-lightbox="example-1">
-                                                <img src="assets/images/portfolio2.jpg" alt="Portfolio">
+                                            <a href="{% static 'website/images/portfolio2.jpg' %}" data-lightbox="example-1">
+                                                <img src="{% static 'website/images/portfolio2.jpg' %}" alt="Portfolio">
                                             </a>
 
-                                            <img src="assets/images/portfolio2.jpg" alt="Portfolio">
+                                            <img src="{% static 'website/images/portfolio2.jpg' %}"  alt="Portfolio">
         
                                             <ul class="portfolio-categories">
                                                 <li>
@@ -508,8 +509,8 @@
                                 <div class="col-md-6 scroll-animation" data-animation="fade_from_right">
                                     <div class="portfolio-item portfolio-half">
                                         <div class="portfolio-item-inner">
-                                            <a href="assets/images/portfolio3.jpg" data-lightbox="example-1">
-                                                <img src="assets/images/portfolio3.jpg" alt="Portfolio">
+                                            <a href="{% static 'website/images/portfolio3.jpg' %}" data-lightbox="example-1">
+                                                <img src="{% static 'website/images/portfolio3.jpg' %}" alt="Portfolio">
                                             </a>
         
                                             <ul class="portfolio-categories">
@@ -528,8 +529,8 @@
                                 <div class="col-md-12 scroll-animation" data-animation="fade_from_bottom">
                                     <div class="portfolio-item portfolio-half">
                                         <div class="portfolio-item-inner">
-                                            <a href="assets/images/portfolio4.jpg" data-lightbox="example-1">
-                                                <img src="assets/images/portfolio4.jpg" alt="portfolio">
+                                            <a href="{% static 'website/images/portfolio4.jpg' %}" data-lightbox="example-1">
+                                                <img src="{% static 'website/images/portfolio4.jpg' %}" alt="Portfolio">
                                             </a>
         
                                             <ul class="portfolio-categories">
@@ -548,8 +549,8 @@
                                 <div class="col-md-12 scroll-animation" data-animation="fade_from_bottom">
                                     <div class="portfolio-item portfolio-half">
                                         <div class="portfolio-item-inner">
-                                            <a href="assets/images/portfolio5.jpg" data-lightbox="example-1">
-                                                <img src="assets/images/portfolio5.jpg" alt="portfolio">
+                                            <a href="{% static 'website/images/portfolio5.jpg' %}" data-lightbox="example-1">
+                                                <img src="{% static 'website/images/portfolio5.jpg' %}" alt="Portfolio">
                                             </a>
         
                                             <ul class="portfolio-categories">
@@ -583,7 +584,7 @@
                                     <div class="testimonial-item">
                                         <div class="testimonial-item-inner">
                                             <div class="author d-flex align-items-center">
-                                                <img src="assets/images/testimonial-1.jpg" alt="portfolio">
+                                                <img src="{% static 'website/images/testimonial-1.jpg' %}" alt="Testimonial">
                                                 <div class="right">
                                                     <h3>Paublo Dybala</h3>
                                                     <p class="designation">CEO of <span>IBM Global</span></p>
@@ -599,7 +600,7 @@
                                     <div class="testimonial-item">
                                         <div class="testimonial-item-inner">
                                             <div class="author d-flex align-items-center">
-                                                <img src="assets/images/testimonial-2.jpg" alt="portfolio">
+                                                <img src="{% static 'website/images/testimonial-2.jpg' %}" alt="Testimonial">
                                                 <div class="right">
                                                     <h3>Christina Morillo</h3>
                                                     <p class="designation">Product Management of <span>Invision App Inc</span></p>
@@ -615,7 +616,7 @@
                                     <div class="testimonial-item">
                                         <div class="testimonial-item-inner">
                                             <div class="author d-flex align-items-center">
-                                                <img src="assets/images/testimonial-3.jpg" alt="portfolio">
+                                                <img src="{% static 'website/images/testimonial-3.jpg' %}" alt="Testimonial">
                                                 <div class="right">
                                                     <h3>Phil Foden</h3>
                                                     <p class="designation">Director of <span>Envato LLC</span></p>
@@ -642,28 +643,28 @@
                                 <h4 class="scroll-animation" data-animation="fade_from_bottom">work with 60+ brands worldwide</h4>
                                 <div class="row align-items-center">
                                     <div class="col-md-3 scroll-animation" data-animation="fade_from_left">
-                                        <img src="assets/images/client-1.png" alt="client">
+                                        <img src="{% static 'website/images/client-1.png' %}" alt="Client">
                                     </div>
                                     <div class="col-md-3 scroll-animation" data-animation="fade_from_bottom">
-                                        <img src="assets/images/client-2.png" alt="client">
+                                        <img src="{% static 'website/images/client-2.png' %}" alt="Client">
                                     </div>
                                     <div class="col-md-3 scroll-animation" data-animation="fade_from_top">
-                                        <img src="assets/images/client-3.png" alt="client">
+                                        <img src="{% static 'website/images/client-3.png' %}" alt="Client">
                                     </div>
                                     <div class="col-md-3 scroll-animation" data-animation="fade_from_right">
-                                        <img src="assets/images/client-4.png" alt="client">
+                                        <img src="{% static 'website/images/client-4.png' %}" alt="Client">
                                     </div>
                                     <div class="col-md-3 scroll-animation" data-animation="fade_from_left">
-                                        <img src="assets/images/client-5.png" alt="client">
+                                        <img src="{% static 'website/images/client-5.png' %}" alt="Client">
                                     </div>
                                     <div class="col-md-3 scroll-animation" data-animation="fade_from_bottom">
-                                        <img src="assets/images/client-6.png" alt="client">
+                                        <img src="{% static 'website/images/client-6.png' %}" alt="Client">
                                     </div>
                                     <div class="col-md-3 scroll-animation" data-animation="fade_from_top">
-                                        <img src="assets/images/client-7.png" alt="client">
+                                        <img src="{% static 'website/images/client-7.png' %}" alt="Client">
                                     </div>
                                     <div class="col-md-3 scroll-animation" data-animation="fade_from_right">
-                                        <img src="assets/images/client-8.png" alt="client">
+                                        <img src="{% static 'website/images/client-8.png' %}" alt="Client">
                                     </div>
                                 </div>
                             </div>
@@ -693,7 +694,7 @@
                                                     <p class="text-right">Have design ready to build?<br>
                                                         or small budget</p>
                                                 </div>
-                                                <h1>$59 <span>/ hour</span></h1>
+                                                <h1>$49 <span>/ hours</span></h1>
                                             </div>
                                             <ul class="feature-lists">
                                                 <li>Need your wireframe</li>
@@ -714,7 +715,7 @@
                                                     <p class="text-right">Not have any design?<br>
                                                         Leave its for me</p>
                                                 </div>
-                                                <h1>$129 <span>/ hour</span></h1>
+                                                <h1>$99 <span>/ hours</span></h1>
                                             </div>
                                             <ul class="feature-lists">
                                                 <li>Don't need wireframe or anything</li>
@@ -827,19 +828,18 @@
     </main>
     
 
-    <script src="assets/js/jquery.js"></script>
-    <script src="assets/js/bootstrap.bundle.min.js"></script>
-    <script src="assets/js/owl.carousel.js"></script>
-    <script src="assets/js/gsap.min.js"></script>
-    <script src="assets/js/ScrollTrigger.min.js"></script>
-    <script src="assets/js/ScrollToPlugin.min.js"></script>
-    <script src="assets/js/lightbox.min.js"></script>
+    <script src="{% static 'website/js/jquery.js' %}"></script>
+    <script src="{% static 'website/js/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'website/js/owl.carousel.js' %}"></script>
+    <script src="{% static 'website/js/gsap.min.js' %}"></script>
+    <script src="{% static 'website/js/ScrollTrigger.min.js' %}"></script>
+    <script src="{% static 'website/js/ScrollToPlugin.min.js' %}"></script>
+    <script src="{% static 'website/js/lightbox.min.js' %}"></script>
     
-    <script src="assets/js/main.js"></script>
-    <script src="assets/js/ajax-form.js"></script>
-    <script src="assets/js/color.js"></script>
-
+    <script src="{% static 'website/js/main.js' %}"></script>
+    <script src="{% static 'website/js/ajax-form.js' %}"></script>
+    <script src="{% static 'website/js/color.js' %}"></script>
 </body>
 
-<!-- Mirrored from wpriverthemes.com/HTML/drake/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 14 Feb 2025 11:31:40 GMT -->
+<!-- Mirrored from wpriverthemes.com/HTML/drake/home1.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 14 Feb 2025 11:31:43 GMT -->
 </html>
