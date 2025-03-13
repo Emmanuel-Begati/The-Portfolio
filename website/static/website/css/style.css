@@ -1175,7 +1175,7 @@ body .body-overlay {
 }
 .clients-logos img {
     display: block;
-    opacity: 0.3;
+    opacity: 0.4;
     transition: .3s;
 }
 .clients-logos img:hover {
