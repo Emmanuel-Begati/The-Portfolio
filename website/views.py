@@ -61,7 +61,7 @@ def contact_view(request):
 
             return HttpResponse("Your message was sent successfully!")  # You can redirect to a success page
         else:
-            return render(request, 'contact.html', {'form': form})
+            return render(request, 'website/home.html', {'form': form})  
 
     else:
         form = ContactForm()
