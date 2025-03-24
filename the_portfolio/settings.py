@@ -171,3 +171,11 @@ LOGGING = {
         },
     },
 }
+
+# Add these settings
+CSRF_TRUSTED_ORIGINS = [
+    'http://localhost:8000',
+    'http://127.0.0.1:8000',
+    'https://emmanuelsportfolio.onrender.com',
+    # Add any other domains your application might be served from
+]

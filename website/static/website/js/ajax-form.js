@@ -2,10 +2,9 @@
     'use strict';
     var form = $('.contact-form'),
         message = $('.messenger-box-contact__msg'),
-        submitButton = $('#submit-form'),
-        form_data;
+        submitButton = $('#submit-form');
 
-    // Setup CSRF token for all AJAX requests
+    // Improved CSRF token handling function
     function getCookie(name) {
         let cookieValue = null;
         if (document.cookie && document.cookie !== '') {
@@ -85,6 +84,9 @@
 
         // Create FormData for file upload
         var formData = new FormData(form[0]);
+        
+        // Explicitly add the CSRF token to the form data
+        formData.append('csrfmiddlewaretoken', csrftoken);
         
         $.ajax({
             type: 'POST',

@@ -721,6 +721,7 @@
 
                             <form class="contact-form scroll-animation" data-animation="fade_from_bottom" method="POST" action="{% url 'contact' %}" enctype="multipart/form-data">
                                 {% csrf_token %}
+                                <input type="hidden" name="csrfmiddlewaretoken" value="{{ csrf_token }}">
                                 <div class="alert alert-success messenger-box-contact__msg" style="display: none" role="alert">
                                     Your message was sent successfully.
                                 </div>
