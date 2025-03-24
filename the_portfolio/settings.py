@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = "django-insecure-o=k71*%jr52m%=is5-a$lvfx92^9m^1tq0x10dxjcmpaxq42zl"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ["emmanuelsportfolio.onrender.com", "localhost", "127.0.0.1"]
  
@@ -130,3 +130,26 @@ EMAIL_PORT = 587  # Use 465 for SSL
 EMAIL_USE_TLS = True  # TLS encryption
 EMAIL_HOST_USER = 'begati16@gmail.com'  # Your Gmail address
 EMAIL_HOST_PASSWORD = 'qqcn vqiv nfyb pbth'  # Your Gmail password
+
+
+#Logging
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        'console': {
+            'class': 'logging.StreamHandler',
+        },
+    },
+    'root': {
+        'handlers': ['console'],
+        'level': 'INFO',
+    },
+    'loggers': {
+        'website': {
+            'handlers': ['console'],
+            'level': 'DEBUG',
+            'propagate': True,
+        },
+    },
+}
