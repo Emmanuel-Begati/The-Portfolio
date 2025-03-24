@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = "django-insecure-o=k71*%jr52m%=is5-a$lvfx92^9m^1tq0x10dxjcmpaxq42zl"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ["emmanuelsportfolio.onrender.com", "localhost", "127.0.0.1"]
  
@@ -117,6 +117,24 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
 STATIC_URL = "static/"
+
+# Add these lines after your existing STATIC_URL setting
+
+# URL prefix for static files
+STATIC_URL = "static/"
+
+# The absolute path to the directory where collectstatic will collect static files for deployment
+STATIC_ROOT = BASE_DIR / "staticfiles"
+
+# Extra places for collectstatic to find static files
+STATICFILES_DIRS = [
+    BASE_DIR / "static",
+]
+
+# Enable WhiteNoise for efficient static file serving (recommended for production)
+if not DEBUG:
+    MIDDLEWARE.insert(1, "whitenoise.middleware.WhiteNoiseMiddleware")
+    STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
