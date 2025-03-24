@@ -67,7 +67,7 @@ def contact_view(request):
                     "Thank you for contacting me. I will get back to you soon.",
                     settings.EMAIL_HOST_USER,
                     [email],
-                    fail_silently=True,
+                    fail_silently=False,
                 )
                 
                 logger.info("Emails sent successfully")
