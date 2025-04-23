@@ -11,25 +11,15 @@ logger = logging.getLogger(__name__)
 
 # Create your views here.
 def home(request):
-    return render(request, 'website/index.html')   
+    # Redirect all traffic to home1 as the main entry point
+    return render(request, 'website/home1.html', {'use_default_body': True})   
 
 def home1(request):
-    return render(request, 'website/home1.html')
+    return render(request, 'website/home1.html', {'use_default_body': True})
 
-def home2(request):
-    return render(request, 'website/home2.html')
-
-def home3(request):
-    return render(request, 'website/home3.html') 
-
-def home4(request):
-    return render(request, 'website/home4.html')
-
-def home5(request):
-    return render(request, 'website/home5.html')
-
-def home6(request):
-    return render(request, 'website/home6.html')
+# Portfolio page without default body
+def portfolio_page(request):
+    return render(request, 'website/portfolio.html')
 
 def contact_view(request):
     logger.debug("Contact view called with method: %s", request.method)
@@ -78,13 +68,12 @@ def contact_view(request):
                 return HttpResponse(f"An error occurred: {str(e)}")
         else:
             logger.warning("Form validation failed: %s", form.errors)
-            # Here's the issue - you're trying to render 'website/home.html' which doesn't exist
-            # Fix: Change to 'website/index.html' which you do have
-            return render(request, 'website/index.html', {'form': form})  
+            # Render the home1 template instead
+            return render(request, 'website/home1.html', {'form': form, 'use_default_body': True})  
 
     else:
         logger.debug("Processing GET request, creating empty form")
         form = ContactForm()
 
-    # Fix: Change this to render 'website/index.html' or another template that exists
-    return render(request, 'website/index.html', {'form': form})
+    # Render the home1 template
+    return render(request, 'website/home1.html', {'form': form, 'use_default_body': True})

@@ -1,0 +1,426 @@
+{% extends 'website/base.html' %}
+{% load static %}
+
+{% block body_class %}portfolio-page{% endblock %}
+
+{% block custom_body %}
+<video class="body-overlay" muted autoplay loop>
+    <source src="{% static 'website/images/video1.mp4' %}" type="video/mp4">
+</video>
+
+<!-- Add Isotope library from CDN -->
+<script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
+
+<main class="drake-main">
+    <div id="smooth-wrapper">
+        <div id="smooth-content">
+            <div class="left-sidebar">
+                <div class="sidebar-header d-flex align-items-center justify-content-between">
+                    <img src="{% static 'website/images/logo.png' %}" alt="Logo">
+                    <span class="designation">Software Engineer</span>
+                </div>
+                <img class="me" src="{% static 'website/images/me.jpg' %}" alt="Me">
+                <h2 class="email">begati16@gmail.com</h2>
+                <h2 class="address">Kigali, Rwanda</h2>
+                <p class="copyright">&copy; 2025 Emmanuel. All Rights Reserved</p>
+                <ul class="social-profile d-flex align-items-center flex-wrap justify-content-center">
+                    <li>
+                        <a href="https://x.com/EmmanuelBegati"><i class="lab la-twitter"></i></a>
+                    </li>
+                    <li>
+                        <a href="https://www.linkedin.com/in/emmanuel-yakubu-37142b241/"><i class="lab la-linkedin"></i></a>
+                    </li>
+                    <li>
+                        <a href="https://www.instagram.com/begati_/"><i class="lab la-instagram"></i></a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/Emmanuel-Begati"><i class="lab la-github"></i></a>
+                    </li>
+                </ul>
+                <a href="mailto:begati16@gmail.com" class="theme-btn">
+                    <i class="las la-envelope"></i> Hire Me!
+                </a>
+                <br> <br>
+                <a href="{% static 'website/images/Emmanuel_Resume.pdf' %}" target="_blank" class="theme-btn">
+                    <i class="las la-download"></i> Download CV
+                </a>
+                <br> <br>
+                <a href="{% url 'home1' %}" class="theme-btn">
+                    <i class="las la-home"></i> Back to Home
+                </a>
+            </div>
+
+            <!-- Portfolio Hero Section -->
+            <section class="hero-section page-section" id="portfolio-hero">
+                <div class="custom-container">
+                    <div class="hero-content content-width">
+                        <div class="section-header">
+                            <h4 class="subtitle scroll-animation" data-animation="fade_from_bottom">
+                                <i class="las la-grip-vertical"></i> Portfolio
+                            </h4>
+                            <h1 class="scroll-animation" data-animation="fade_from_bottom">My <span>Complete Works</span></h1>
+                        </div>
+                        <p class="scroll-animation" data-animation="fade_from_bottom">A comprehensive showcase of my projects spanning machine learning, AI, web development, and more. Each project reflects my commitment to innovation, efficiency, and quality.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Portfolio Filter Section -->
+            <section class="portfolio-filter-section">
+                <div class="custom-container">
+                    <div class="content-width">
+                        <div class="portfolio-filter text-center scroll-animation" data-animation="fade_from_bottom">
+                            <ul class="filter-tabs">
+                                <li class="active" data-filter="*">All Projects</li>
+                                <li data-filter=".web">Web Development</li>
+                                <li data-filter=".ml">Machine Learning</li>
+                                <li data-filter=".ai">AI</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Projects Showcase Section -->
+            <section class="portfolio-showcase-section">
+                <div class="custom-container">
+                    <div class="content-width">
+                        <div class="row portfolio-items isotope-items">
+                            <!-- Project 1: TenGo -->
+                            <div class="col-md-12 isotope-item web scroll-animation" data-animation="fade_from_bottom">
+                                <div class="portfolio-item portfolio-full">
+                                    <div class="portfolio-item-inner">
+                                        <a href="{% static 'website/images/portfolio1.png' %}" data-lightbox="example-1">
+                                            <img src="{% static 'website/images/portfolio1.png' %}" alt="TenGo">
+                                        </a>
+                                        <ul class="portfolio-categories">
+                                            <li><a href="#">Python</a></li>
+                                            <li><a href="#">Django</a></li>
+                                            <li><a href="#">Websocket</a></li>
+                                        </ul>
+                                    </div>
+                                    <h2><a href="https://tengo.onrender.com/" target="_blank">TenGo - Food Delivery Website</a></h2>
+                                    <div class="portfolio-description">
+                                        <p>A comprehensive food delivery platform built with Django, featuring real-time order tracking, secure payment processing, and an intuitive user interface. The application utilizes WebSockets for real-time updates and notifications.</p>
+                                        <div class="tech-stack">
+                                            <span class="tech-label">Tech Stack:</span>
+                                            <span class="tech-item">Django</span>
+                                            <span class="tech-item">PostgreSQL</span>
+                                            <span class="tech-item">WebSocket</span>
+                                            <span class="tech-item">JavaScript</span>
+                                            <span class="tech-item">Render Deployment</span>
+                                        </div>
+                                        <a href="https://tengo.onrender.com/" target="_blank" class="theme-btn btn-small">
+                                            <i class="las la-external-link-alt"></i> View Project
+                                        </a>
+                                        <a href="https://github.com/Emmanuel-Begati/TenGo" target="_blank" class="theme-btn btn-small">
+                                            <i class="lab la-github"></i> View Code
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Project 2: Chess Environment -->
+                            <div class="col-md-12 isotope-item ai ml scroll-animation" data-animation="fade_from_bottom">
+                                <div class="portfolio-item portfolio-full">
+                                    <div class="portfolio-item-inner">
+                                        <a href="{% static 'website/images/chess-environ.png' %}" data-lightbox="example-2">
+                                            <img src="{% static 'website/images/chess-environ.png' %}" alt="Chess Environment">
+                                        </a>
+                                        <ul class="portfolio-categories">
+                                            <li><a href="#">Python</a></li>
+                                            <li><a href="#">Reinforcement Learning</a></li>
+                                            <li><a href="#">OpenAI Gym</a></li>
+                                        </ul>
+                                    </div>
+                                    <h2><a href="https://github.com/Emmanuel-Begati/chess-environ" target="_blank">Chess-Environ - Chess RL Environment</a></h2>
+                                    <div class="portfolio-description">
+                                        <p>A custom reinforcement learning environment built using Python and OpenAI Gym interfaces, designed specifically for training and evaluating chess agents. It simulates the chessboard as an RL environment, allowing integration with various algorithms to learn strategic play through trial and error. The goal is to develop agents that improve over time by playing games, analyzing outcomes, and adjusting their strategies—mirroring how humans learn chess through experience.</p>
+                                        <div class="tech-stack">
+                                            <span class="tech-label">Tech Stack:</span>
+                                            <span class="tech-item">Python</span>
+                                            <span class="tech-item">OpenAI Gym</span>
+                                            <span class="tech-item">Reinforcement Learning</span>
+                                            <span class="tech-item">Neural Networks</span>
+                                        </div>
+                                        <a href="https://github.com/Emmanuel-Begati/chess-environ" target="_blank" class="theme-btn btn-small">
+                                            <i class="lab la-github"></i> View Code
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Project 3: Customer Loan Verification -->
+                            <div class="col-md-6 isotope-item ml web scroll-animation" data-animation="fade_from_left">
+                                <div class="portfolio-item portfolio-half">
+                                    <div class="portfolio-item-inner">
+                                        <a href="{% static 'website/images/portfolio2.png' %}" data-lightbox="example-3">
+                                            <img src="{% static 'website/images/portfolio2.png' %}" alt="Loan Verification">
+                                        </a>
+                                        <ul class="portfolio-categories">
+                                            <li><a href="#">Python HTML/CSS</a></li>
+                                            <li><a href="#">Machine Learning</a></li>
+                                        </ul>
+                                    </div>
+                                    <h2><a href="https://customer-loan-verification-api.onrender.com/" target="_blank">Customer Loan Verification</a></h2>
+                                    <div class="portfolio-description">
+                                        <p>A machine learning application that predicts customer loan eligibility based on various parameters. The system uses historical data to make accurate predictions about loan approval probability.</p>
+                                        <div class="tech-stack">
+                                            <span class="tech-label">Tech Stack:</span>
+                                            <span class="tech-item">Python</span>
+                                            <span class="tech-item">Scikit-learn</span>
+                                            <span class="tech-item">Flask</span>
+                                            <span class="tech-item">HTML/CSS</span>
+                                        </div>
+                                        <a href="https://customer-loan-verification-api.onrender.com/" target="_blank" class="theme-btn btn-small">
+                                            <i class="las la-external-link-alt"></i> View Project
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Project 4: Sentiment Analysis -->
+                            <div class="col-md-6 isotope-item ai ml scroll-animation" data-animation="fade_from_right">
+                                <div class="portfolio-item portfolio-half">
+                                    <div class="portfolio-item-inner">
+                                        <a href="{% static 'website/images/portfolio3.png' %}" data-lightbox="example-4">
+                                            <img src="{% static 'website/images/portfolio3.png' %}" alt="Sentiment Analysis">
+                                        </a>
+                                        <ul class="portfolio-categories">
+                                            <li><a href="#">AI</a></li>
+                                            <li><a href="#">NLP</a></li>
+                                        </ul>
+                                    </div>
+                                    <h2><a href="#">Sentiment Analysis</a></h2>
+                                    <div class="portfolio-description">
+                                        <p>An NLP-based sentiment analysis tool that can analyze and categorize emotions and opinions from text data. Used for social media monitoring and customer feedback analysis.</p>
+                                        <div class="tech-stack">
+                                            <span class="tech-label">Tech Stack:</span>
+                                            <span class="tech-item">Python</span>
+                                            <span class="tech-item">NLTK</span>
+                                            <span class="tech-item">TensorFlow</span>
+                                            <span class="tech-item">Transformers</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Project 5: Cropbot -->
+                            <div class="col-md-12 isotope-item ai ml scroll-animation" data-animation="fade_from_bottom">
+                                <div class="portfolio-item portfolio-full">
+                                    <div class="portfolio-item-inner">
+                                        <a href="{% static 'website/images/portfolio4.png' %}" data-lightbox="example-5">
+                                            <img src="{% static 'website/images/portfolio4.png' %}" alt="Cropbot">
+                                        </a>
+                                        <ul class="portfolio-categories">
+                                            <li><a href="#">NLP</a></li>
+                                            <li><a href="#">Data Science</a></li>
+                                        </ul>
+                                    </div>
+                                    <h2><a href="https://thecropbot.streamlit.app/" target="_blank"> Cropbot - An AI Crop Specialist</a></h2>
+                                    <div class="portfolio-description">
+                                        <p>An AI-powered application that provides farmers with expert advice on crop management, disease identification, and treatment recommendations. The system uses NLP to understand farmers' questions and provides tailored responses.</p>
+                                        <div class="tech-stack">
+                                            <span class="tech-label">Tech Stack:</span>
+                                            <span class="tech-item">Python</span>
+                                            <span class="tech-item">Streamlit</span>
+                                            <span class="tech-item">NLP</span>
+                                            <span class="tech-item">Machine Learning</span>
+                                        </div>
+                                        <a href="https://thecropbot.streamlit.app/" target="_blank" class="theme-btn btn-small">
+                                            <i class="las la-external-link-alt"></i> View Project
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Add Placeholder for Future Projects -->
+                            <div class="col-md-6 isotope-item scroll-animation coming-soon" data-animation="fade_from_bottom">
+                                <div class="portfolio-item portfolio-half">
+                                    <div class="portfolio-item-inner coming-soon-project">
+                                        <div class="coming-soon-overlay">
+                                            <h3>Coming Soon</h3>
+                                            <p>New project under development</p>
+                                            <i class="las la-code"></i>
+                                        </div>
+                                    </div>
+                                    <h2>Future Project</h2>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Call to Action Section -->
+            <section class="cta-section">
+                <div class="custom-container">
+                    <div class="content-width">
+                        <div class="cta-content scroll-animation" data-animation="fade_from_bottom">
+                            <h2>Interested in working together?</h2>
+                            <p>I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision.</p>
+                            <a href="{% url 'contact' %}" class="theme-btn">
+                                <i class="las la-envelope"></i> Get in Touch
+                            </a>
+                            <a href="{% url 'home1' %}" class="theme-btn">
+                                <i class="las la-home"></i> Return to Home
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+</main>
+
+<!-- Custom CSS for Portfolio Page -->
+<style>
+    .portfolio-filter {
+        margin-bottom: 50px;
+    }
+    
+    .filter-tabs {
+        display: flex;
+        justify-content: center;
+        padding: 0;
+        list-style: none;
+        flex-wrap: wrap;
+    }
+    
+    .filter-tabs li {
+        padding: 8px 20px;
+        margin: 0 10px 10px;
+        cursor: pointer;
+        border-radius: 30px;
+        background-color: rgba(255,255,255,0.1);
+        transition: all 0.3s ease;
+    }
+    
+    .filter-tabs li:hover {
+        background-color: var(--primary-color);
+    }
+    
+    .filter-tabs li.active {
+        background-color: var(--primary-color);
+        color: #fff;
+    }
+    
+    .portfolio-description {
+        margin-top: 20px;
+        padding-top: 20px;
+        border-top: 1px solid rgba(255,255,255,0.1);
+    }
+    
+    .tech-stack {
+        margin: 15px 0;
+    }
+    
+    .tech-label {
+        display: inline-block;
+        font-weight: 600;
+        margin-right: 10px;
+    }
+    
+    .tech-item {
+        display: inline-block;
+        background: rgba(var(--primary-rgb), 0.2);
+        color: var(--primary-color);
+        padding: 2px 10px;
+        border-radius: 15px;
+        margin: 0 5px 5px 0;
+        font-size: 0.8em;
+    }
+    
+    .btn-small {
+        padding: 8px 20px;
+        margin-right: 10px;
+        margin-top: 10px;
+        font-size: 0.9em;
+    }
+    
+    #portfolio-hero {
+        padding-top: 100px;
+    }
+    
+    .cta-section {
+        padding: 80px 0;
+        text-align: center;
+    }
+    
+    .cta-content {
+        padding: 40px;
+        background: rgba(255,255,255,0.05);
+        border-radius: 20px;
+    }
+    
+    .cta-content h2 {
+        font-size: 36px;
+        margin-bottom: 20px;
+    }
+    
+    .cta-content .theme-btn {
+        margin: 20px 10px 0;
+    }
+    
+    .coming-soon-project {
+        position: relative;
+        background-color: rgba(255,255,255,0.05);
+        border-radius: 20px;
+        height: 300px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .coming-soon-overlay {
+        text-align: center;
+    }
+    
+    .coming-soon-overlay i {
+        font-size: 50px;
+        margin: 20px 0;
+        color: var(--primary-color);
+    }
+    
+    @media (max-width: 768px) {
+        .filter-tabs {
+            flex-direction: column;
+        }
+        
+        .filter-tabs li {
+            margin-bottom: 10px;
+        }
+    }
+</style>
+
+<!-- Custom JavaScript for Portfolio Page -->
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Initialize isotope after page load
+        setTimeout(function() {
+            const grid = document.querySelector('.isotope-items');
+            const iso = new Isotope(grid, {
+                itemSelector: '.isotope-item',
+                layoutMode: 'fitRows'
+            });
+            
+            // Filter items on button click
+            document.querySelectorAll('.filter-tabs li').forEach(function(filterBtn) {
+                filterBtn.addEventListener('click', function() {
+                    const filterValue = this.getAttribute('data-filter');
+                    
+                    // Update active class
+                    document.querySelectorAll('.filter-tabs li').forEach(function(btn) {
+                        btn.classList.remove('active');
+                    });
+                    this.classList.add('active');
+                    
+                    iso.arrange({
+                        filter: filterValue === '*' ? null : filterValue
+                    });
+                });
+            });
+        }, 1000);
+    });
+</script>
+{% endblock %}

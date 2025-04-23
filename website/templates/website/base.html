@@ -27,12 +27,19 @@
     <link rel="stylesheet" href="{% static 'website/css/style.css' %}">
     <link rel="stylesheet" href="{% static 'website/css/responsive.css' %}">
 
+    <style>
+        :root {
+            --primary_color: #52b788;  /* Setting green as the default theme color */
+        }
+    </style>
+
 </head>
-<body class="home1-page">
+<body class="{% block body_class %}home1-page{% endblock %}">
 
 {% block content %}
 
 {% endblock content%}
+
 
     <div class="page-loader">
         <div class="bounceball"></div>
@@ -42,44 +49,6 @@
         <span class="bar"></span>
         <span class="bar"></span>
     </span>
-
-    <div class="global-color">
-        <span class="setting-toggle">
-            <i class="las la-cog"></i>
-        </span>
-        <div class="inner">
-            <div class="overlay"></div>
-            <div class="global-color-option">
-                <span class="close-settings">
-                    <i class="las la-times"></i>
-                </span>
-                <h2>Configuration</h2>
-                <div class="global-color-option-inner">
-                    <p>Colors</p>
-                    <div class="color-boxed">
-                        <a href="#" class="clr-active" onclick="color1();"></a>
-                        <a href="#" onclick="color2();"></a>
-                        <a href="#" onclick="color3();"></a>
-                        <a href="#" onclick="color4();"></a>
-                        <a href="#" onclick="color5();"></a>
-                        <a href="#" onclick="color6();"></a>
-                        <a href="#" onclick="color7();"></a>
-                        <a href="#" onclick="color8();"></a>
-                    </div>
-
-                    <p>THREE DIMENSIONAL SHAPES</p>
-                    <ul class="themes">
-                        <li class="active"><a href="{% url 'home1' %}">Earth Lines Sphere</a></li>
-                        <li><a href="{% url 'home2' %}">3D Abstract Ball</a></li>
-                        <li><a href="{% url 'home3' %}">Water Waves</a></li>
-                        <li><a href="{% url 'home4' %}">Liquids Wavy</a></li>
-                        <li><a href="{% url 'home6' %}">Solid Color</a></li>
-                        <li><a href="{% url 'home5' %}">Simple Strings</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
 
     <div class="responsive-sidebar-menu">
         <div class="overlay"></div>
@@ -115,6 +84,11 @@
                     <li>
                         <a class="scroll-to" href="#portfolio">
                             <i class="las la-grip-vertical"></i> <span>Portfolios</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{% url 'portfolio' %}">
+                            <i class="las la-project-diagram"></i> <span>All Projects</span>
                         </a>
                     </li>
                     <li>
@@ -179,6 +153,11 @@
             </a>
         </li>
         <li>
+            <a href="{% url 'portfolio' %}">
+                <span>All Projects</span> <i class="las la-project-diagram"></i>
+            </a>
+        </li>
+        <li>
             <a class="scroll-to" href="#testimonial">
                 <span>Testimonial</span> <i class="lar la-comment"></i>
             </a>
@@ -222,7 +201,7 @@
         </a>
         
     </div>
-
+    {% if use_default_body %}
     <main class="drake-main">
         <div id="smooth-wrapper">
             <div id="smooth-content">
@@ -234,7 +213,7 @@
                     </div>
                     <img class="me" src="{% static 'website/images/me.jpg' %}" alt="Me">
                     <h2 class="email">begati16@gmail.com</h2>
-                    <h2 class="address">Base in Los Angeles, CA</h2>
+                    <h2 class="address">Kigali, Rwanda</h2>
                     <p class="copyright">&copy; 2022 Drake. All Rights Reserved</p>
                     <ul class="social-profile d-flex align-items-center flex-wrap justify-content-center">
                         <li>
@@ -276,7 +255,7 @@
         
                             <div class="facts d-flex">
                                 <div class="left scroll-animation" data-animation="fade_from_left">
-                                    <h1>3+</</h1>
+                                    <h1>3+</h1>
                                     <p>Years of <br>Experience</p>
                                 </div>
                                 <div class="right scroll-animation" data-animation="fade_from_right">
@@ -516,7 +495,30 @@
                                     </div>
                                 </div>
         
-                                <div class="col-md-6 scroll-animation" data-animation="fade_from_left">
+                                <div class="col-md-12 scroll-animation" data-animation="fade_from_left">
+                                    <div class="portfolio-item portfolio-full">
+                                        <div class="portfolio-item-inner">
+                                            <a href="{% static 'website/images/chess-environ.png' %}" data-lightbox="example-1">
+                                                <img src="{% static 'website/images/chess-environ.png' %}" alt="Chess Environment">
+                                            </a>
+        
+                                            <ul class="portfolio-categories">
+                                                <li>
+                                                    <a href="#">Python</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">Reinforcement Learning</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">OpenAI Gym</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <h2><a href="https://github.com/Emmanuel-Begati/chess-environ" target="_blank">Chess-Environ - Chess RL Environment</a></h2>
+                                    </div>
+                                </div>
+        
+                                <div class="col-md-6 scroll-animation" data-animation="fade_from_right">
                                     <div class="portfolio-item portfolio-half">
                                         <div class="portfolio-item-inner">
                                             <a href="{% static 'website/images/portfolio2.png' %}" data-lightbox="example-1">
@@ -792,7 +794,11 @@
             </div>
         </div>
     </main>
-    
+    {% else %}
+    {% block custom_body %}
+                
+    {% endblock custom_body %}
+{% endif %}
 
     <script src="{% static 'website/js/jquery.js' %}"></script>
     <script src="{% static 'website/js/bootstrap.bundle.min.js' %}"></script>
