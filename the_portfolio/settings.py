@@ -25,7 +25,7 @@ SECRET_KEY = "django-insecure-o=k71*%jr52m%=is5-a$lvfx92^9m^1tq0x10dxjcmpaxq42zl
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ["emmanuelsportfolio.onrender.com", "localhost", "127.0.0.1"]
+ALLOWED_HOSTS = ["emmanuelsportfolio.onrender.com", "localhost", "127.0.0.1", "thisisemmanuel.pro"]
  
 
 # Application definition
@@ -118,13 +118,9 @@ USE_TZ = True
 
 STATIC_URL = "static/"
 
-# Add these lines after your existing STATIC_URL setting
-
-# URL prefix for static files
-STATIC_URL = "static/"
-
+import os
 # The absolute path to the directory where collectstatic will collect static files for deployment
-STATIC_ROOT = BASE_DIR / "staticfiles"
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')  # where collectstatic dumps everything
 
 # Extra places for collectstatic to find static files
 STATICFILES_DIRS = [
